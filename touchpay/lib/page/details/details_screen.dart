@@ -26,7 +26,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
            _launchURL(widget.model.mail, widget.model.title, '');
         },
         child: Icon(Icons.message, color: Colors.white,),
-        backgroundColor: AppConstant.kPrimaryColor,
+        backgroundColor: Colors.transparent,
       ),
     );
   }

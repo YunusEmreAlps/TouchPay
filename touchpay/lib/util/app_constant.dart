@@ -98,6 +98,7 @@ class AppConstant {
 
   // Button
   static final String kContinueText = 'Continue';
+  static final String kDonateText = 'Donate Now : ';
 
   // Divider Text
   static final String kOrText = 'OR';

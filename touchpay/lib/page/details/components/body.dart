@@ -7,8 +7,10 @@ import 'package:touchpay/util/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:touchpay/util/app_constant.dart';
 import 'package:touchpay/widget/social_card.dart';
+import 'package:touchpay/widget/default_button.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
-
+import 'package:touchpay/widget/custom_alert.dart';
+import 'package:touchpay/util/app_constant.dart';
 
 // Structure
 class Body extends StatefulWidget {
@@ -20,8 +22,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final GlobalKey<ExpansionTileCardState> cardAboutUs = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> cardSkills = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> cardHobbies = new GlobalKey();
+  final GlobalKey<ExpansionTileCardState> cardGoals = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -80,15 +81,150 @@ class _BodyState extends State<Body> {
                       vertical: 8.0,
                     ),
                     child: Text(
-                     "I solve problems in creative ways. At Konya NEU, where I am completing my junior year in the College of Engineering, I have learned the importance of applying classical strategies to modern-day projects. Software engineering is never ending puzzle that I am passionately in solving. This passion carried me through my education Purdue. First, I learned C then C++. I studied new languages, algorithms, compilers, higher mathematics, all with pretty much the same fascination.\n\nSo, now, in industry, this passion remains with me. There’s certainly yet more to learn, yet more problems, and yet more to build.",
-                      style: TextStyle(fontFamily: 'CaviarDreams', height: 1.5,),
+                      widget.model.aboutus,
+                      style: TextStyle(
+                        fontFamily: 'CaviarDreams',
+                        height: 1.5,
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
           ),
+
+          // Goals
+          Theme(
+            data: ThemeData(
+              backgroundColor: Colors.white,
+            ),
+            child: ExpansionTile(
+              key: cardGoals,
+              leading: SvgPicture.asset("assets/icons/origin.svg"),
+              title: Text(
+                "Goals",
+                style: TextStyle(
+                  fontFamily: 'NexaLight',
+                  fontSize: SizeConfig.defaultSize * 1.8, // 18
+                  color: Color(0xFF202E2E),
+                ),
+              ),
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      widget.model.goals,
+                      style: TextStyle(
+                        fontFamily: 'CaviarDreams',
+                        height: 1.5,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            child: Column(
+              children: <Widget>[
+                DefaultButton(
+                  text: AppConstant.kDonateText + widget.model.payment,
+                  buttonColor: AppConstant.kPrimaryColor,
+                  textColor: Colors.white,
+                  press: () {
+                    _showDialog();
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  void _showDialog() {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (context) => CustomAlert(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              SizedBox(height: 15.0),
+              Text(
+                AppConstant.appName,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                ),
+              ),
+              SizedBox(height: 25.0),
+              Text(
+                'Are you sure?',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14.0,
+                ),
+              ),
+              SizedBox(height: 40.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    height: 40.0,
+                    width: 130.0,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Text(
+                        'Yes',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      onPressed: () => {
+                        // Donation
+                      },
+                      color: AppConstant.kPrimaryColor,
+                    ),
+                  ),
+                  Container(
+                    height: 40.0,
+                    width: 130.0,
+                    child: OutlineButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      borderSide: BorderSide(color: AppConstant.kPrimaryColor),
+                      child: Text(
+                        'No',
+                        style: TextStyle(
+                          color: AppConstant.kPrimaryColor,
+                        ),
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0),
+            ],
+          ),
+        ),
       ),
     );
   }
