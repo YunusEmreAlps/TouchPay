@@ -38,7 +38,7 @@ class StatCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Row(
+          /*Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
@@ -58,7 +58,7 @@ class StatCard extends StatelessWidget {
                       width: 20,
                     ),
             ],
-          ),
+          ),*/
           Padding(
             padding: EdgeInsets.only(top: 25),
           ),

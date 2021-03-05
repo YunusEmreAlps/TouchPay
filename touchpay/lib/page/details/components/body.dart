@@ -42,14 +42,17 @@ class _BodyState extends State<Body> {
             children: [
               SocialCard(
                 icon: "assets/icons/globe.svg",
+                color: Color(0xFFF5F6F9),
                 press: () => launch(widget.model.website),
               ),
               SocialCard(
-                icon: "assets/icons/facebook-2.svg",
+                icon: "assets/icons/facebook.svg",
+                 color: Color(0xFFF5F6F9),
                 press: () => launch(widget.model.facebook),
               ),
               SocialCard(
                 icon: "assets/icons/twitter.svg",
+                color: Color(0xFFF5F6F9),
                 press: () => launch(widget.model.twitter),
               ),
             ],
@@ -135,7 +138,7 @@ class _BodyState extends State<Body> {
             child: Column(
               children: <Widget>[
                 DefaultButton(
-                  text: AppConstant.kDonateText + widget.model.payment,
+                  text: AppConstant.kDonateText + widget.model.payment.toString() + ' STEP',
                   buttonColor: AppConstant.kPrimaryColor,
                   textColor: Colors.white,
                   press: () {

@@ -90,7 +90,7 @@ class HomePageListView extends StatelessWidget {
               children: <Widget>[
                 SizedBox(height: 5),
                 Text(
-                  "${model.payment}",
+                  "${model.payment.toString()} STEP",
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.w500,
                     fontSize: 14,

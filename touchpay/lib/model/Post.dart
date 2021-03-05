@@ -11,7 +11,7 @@ class Post {
   String slug;
   String avatar;
   String mail;
-  String payment;
+  int payment;
 
   Post(
       {this.registered_at,
@@ -73,7 +73,7 @@ List<Post> list = [
     slug: '',
     avatar: 'assets/images/UNICEF.jpg',
     mail: '',
-    payment: '1000 STEP'
+    payment: 1000
   ),
   Post(
     registered_at: '',
@@ -87,7 +87,7 @@ List<Post> list = [
     slug: '',
     avatar: 'assets/images/lösev.png',
     mail: '',
-    payment: '500 STEP'
+    payment: 500
   ),
   Post(
     registered_at: '',
@@ -101,7 +101,7 @@ List<Post> list = [
     slug: '',
     avatar: 'assets/images/Tohum_logo.png',
     mail: '',
-    payment: '700 STEP'
+    payment: 700
   ),
   Post(
     registered_at: '',
@@ -115,6 +115,6 @@ List<Post> list = [
     slug: '',
     avatar: 'assets/images/tema.jpg',
     mail: '',
-    payment: '4000 STEP'
+    payment: 4000
   ),
 ];
