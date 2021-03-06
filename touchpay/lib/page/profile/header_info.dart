@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:touchpay/util/app_constant.dart';
 
 class HeaderInfo extends StatelessWidget {
   final bool isMain;
@@ -54,25 +55,30 @@ class HeaderInfo extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          isMain ? Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Today, ${now.day}nd, $month, ${now.year}',
-                style: TextStyle(fontSize: 24.0),
-              ),
-            ],
-          ) : Row(
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-              ),
-              Text(sectionTitle, style: TextStyle(fontSize: 24.0),),
-            ],
-          ),
+          isMain
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      '${now.day}nd, $month, ${now.year}',
+                      style: TextStyle(fontSize: 24.0),
+                    ),
+                  ],
+                )
+              : Row(
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    Text(
+                      sectionTitle,
+                      style: TextStyle(fontSize: 24.0),
+                    ),
+                  ],
+                ),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pedometer/pedometer.dart';
 import 'package:touchpay/model/Post.dart';
+import 'package:touchpay/page/home/home_page.dart';
 import 'package:touchpay/util/app_constant.dart';
 import 'package:touchpay/util/size_config.dart';
 import 'package:touchpay/page/details/details_screen.dart';
@@ -26,6 +28,8 @@ class HomePageListView extends StatelessWidget {
           _cards(context, list[1]),
           _cards(context, list[2]),
           _cards(context, list[3]),
+          _cards(context, list[4]),
+          _cards(context, list[5]),
         ],
       ),
     );
@@ -36,6 +40,7 @@ class HomePageListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTap: () {
           Navigator.push(
             context,
@@ -90,7 +95,7 @@ class HomePageListView extends StatelessWidget {
               children: <Widget>[
                 SizedBox(height: 5),
                 Text(
-                  "${model.payment.toString()} STEP",
+                  "${model.payment} STEP",
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.w500,
                     fontSize: 14,

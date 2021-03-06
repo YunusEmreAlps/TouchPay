@@ -20,8 +20,7 @@ class SocialCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin:
-            EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize), // 10
+        margin: EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize), // 10
         padding: EdgeInsets.all(SizeConfig.defaultSize * 0.6), // 6
         height: SizeConfig.defaultSize * 3.5, // 35
         width: SizeConfig.defaultSize * 3.5, // 35
@@ -32,6 +31,5 @@ class SocialCard extends StatelessWidget {
         child: SvgPicture.asset(icon),
       ),
     );
-  }  
+  }
 }
-

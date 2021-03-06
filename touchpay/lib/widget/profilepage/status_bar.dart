@@ -38,7 +38,7 @@ class StatCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          /*Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
@@ -50,15 +50,15 @@ class StatCard extends StatelessWidget {
               ),
               achieved < total
                   ? Image.asset(
-                      'assets/img/down_orange.png',
+                      'assets/images/down_orange.png',
                       width: 20,
                     )
                   : Image.asset(
-                      'assets/img/up_red.png',
+                      'assets/images/up_red.png',
                       width: 20,
                     ),
             ],
-          ),*/
+          ),
           Padding(
             padding: EdgeInsets.only(top: 25),
           ),
@@ -77,7 +77,7 @@ class StatCard extends StatelessWidget {
           RichText(
             text: TextSpan(children: [
               TextSpan(
-                text: achieved.toString(),
+                text: achieved.toStringAsFixed(2),
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.orange[600],

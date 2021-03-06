@@ -3,7 +3,6 @@ import 'package:touchpay/util/fade_animation.dart';
 import 'package:touchpay/widget/searchpage/vowels.dart';
 import 'package:touchpay/widget/searchpage/history_body_list.dart';
 
-
 class SearchPage extends StatefulWidget {
   SearchPage({Key key}) : super(key: key);
 
@@ -27,8 +26,8 @@ class _SearchPageState extends State<SearchPage> {
               ),
               Vowels(),
               HistoryBodyList(
-                historyWord: 'TouchPay',
-              )
+                historyWord: 'TouchPay: Donation',
+              ),
             ],
           )
         ],

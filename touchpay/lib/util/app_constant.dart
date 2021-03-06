@@ -39,6 +39,7 @@ class AppConstant {
   static final Color kBackgroundDarkColor = Color(0xFF3A3A3A);
   static final Color kSurfaceDarkColor = Color(0xFF222225);
 
+  static final Color kIconColor = Color(0xFFF5F6F9);
   static final Color kAccentIconLightColor = Color(0xFFECEFF5);
   static final Color kAccentIconDarkColor = Color(0xFF303030);
   static final Color kPrimaryIconLightColor = Color(0xFFECEFF5);
@@ -88,12 +89,15 @@ class AppConstant {
   static final String magaza = '';
   static final String eMagaza = 'E-Donation';
   static final String magazaAddress = '';
-  static final String appLongRichDescription = "TouchPay";
-  static final String appLongDescription = ' founded in 2021.';
+  static final String appLongRichDescription =
+      "TouchPay was founded on a dream of creating a global consumer technology company from Konya. We started our journey in 2021 with the vision of planting seeds for the future.\n\n";
+  static final String appLongDescription =
+      'Our goal at TouchPay is to gather people with high capabilities, strong values and a will to shape TouchPay’s story. \n\nTo start realising our big dreams, we choose social network as our first and main area of focus. \nSocial network is one of the few truly universal activities that transcends age, gender or nationality and we believe with the right product, we could reach billions of people worldwide.\n';
 
   // Welcome Screen Slider
   static final String welcomeSlide1Text = 'Welcome to TouchPay!';
-  static final String welcomeSlide2Text = 'We help people to connect with \naround from nearby or around the world.';
+  static final String welcomeSlide2Text =
+      'We help people to connect with \naround from nearby or around the world.';
   static final String welcomeSlide3Text = 'Take an Action For Other Peoples';
 
   // Button
@@ -102,7 +106,6 @@ class AppConstant {
 
   // Divider Text
   static final String kOrText = 'OR';
-
 
   // Ends
 

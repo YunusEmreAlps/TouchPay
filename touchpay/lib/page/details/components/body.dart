@@ -1,5 +1,7 @@
 // Libraries
 import 'info.dart';
+import 'dart:convert';
+import 'package:touchpay/sharedpreferences/sharedpreferences.dart';
 import 'package:flutter/material.dart';
 import 'package:touchpay/model/Post.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,8 +48,8 @@ class _BodyState extends State<Body> {
                 press: () => launch(widget.model.website),
               ),
               SocialCard(
-                icon: "assets/icons/facebook.svg",
-                 color: Color(0xFFF5F6F9),
+                icon: "assets/icons/facebook-2.svg",
+                color: Color(0xFFF5F6F9),
                 press: () => launch(widget.model.facebook),
               ),
               SocialCard(
@@ -138,7 +140,9 @@ class _BodyState extends State<Body> {
             child: Column(
               children: <Widget>[
                 DefaultButton(
-                  text: AppConstant.kDonateText + widget.model.payment.toString() + ' STEP',
+                  text: AppConstant.kDonateText +
+                      widget.model.payment.toString() +
+                      ' STEP',
                   buttonColor: AppConstant.kPrimaryColor,
                   textColor: Colors.white,
                   press: () {
@@ -198,9 +202,8 @@ class _BodyState extends State<Body> {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => {
-                        // Donation
-                      },
+                      onPressed: () =>
+                          {pay(widget.model.payment), Navigator.pop(context)},
                       color: AppConstant.kPrimaryColor,
                     ),
                   ),
@@ -230,5 +233,83 @@ class _BodyState extends State<Body> {
         ),
       ),
     );
+  }
+
+  void _showResultDialog(String resultText) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (context) => CustomAlert(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              SizedBox(height: 15.0),
+              Text(
+                AppConstant.appName,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                ),
+              ),
+              SizedBox(height: 25.0),
+              Text(
+                resultText,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14.0,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 40.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 40.0,
+                    width: 130.0,
+                    child: OutlineButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      borderSide: BorderSide(color: AppConstant.kPrimaryColor),
+                      child: Text(
+                        'Okey',
+                        style: TextStyle(
+                          color: AppConstant.kPrimaryColor,
+                        ),
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void pay(int odenecek) async {
+    var ToplamOdenen = await Pref().loadInt("odenen");
+    var ToplamAdim = await Pref().loadInt("adim");
+
+    int gecerliAdim = ToplamAdim - ToplamOdenen;
+
+    if (gecerliAdim >= odenecek) {
+      ToplamOdenen += odenecek;
+
+      Pref().saveInt("odenen", ToplamOdenen);
+      _showResultDialog("Congratulations!\nYour payment is successful.");
+    } else {
+      _showResultDialog("Whoops,\nSomething went wrong.");
+      //Pref().save("odenen", 0);
+    }
   }
 }

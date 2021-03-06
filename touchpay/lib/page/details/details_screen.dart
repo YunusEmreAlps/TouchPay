@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pedometer/pedometer.dart';
 import 'package:touchpay/model/Post.dart';
+import 'package:touchpay/sharedpreferences/sharedpreferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:touchpay/util/size_config.dart';
 import 'package:touchpay/util/app_constant.dart';
 import 'package:touchpay/page/details/components/body.dart';
-
 
 // Structure
 class DetailsScreen extends StatefulWidget {
@@ -15,17 +16,34 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  void stepInfo() {
+    Pedometer.stepCountStream.listen(onStepCount);
+  }
+
+  void onStepCount(StepCount event) {
+    print("yürüme:" + event.toString());
+    int step = event.steps;
+    if (!mounted) return;
+    Pref().saveInt("adim", event.steps);
+  }
+
   @override
   Widget build(BuildContext context) {
+    stepInfo();
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(model:  widget.model,),
+      body: Body(
+        model: widget.model,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-           _launchURL(widget.model.mail, widget.model.title, '');
+          _launchURL(widget.model.mail, widget.model.title, '');
         },
-        child: Icon(Icons.message, color: Colors.white,),
+        child: Icon(
+          Icons.message,
+          color: Colors.white,
+        ),
         backgroundColor: Colors.transparent,
       ),
     );
@@ -56,10 +74,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
       title: Text(
         widget.model.title,
         style: TextStyle(
-          fontFamily: 'NexaLight',
-          letterSpacing: 2,
-          color: AppConstant.kPrimaryLightColor
-        ),
+            fontFamily: 'NexaLight',
+            letterSpacing: 2,
+            color: AppConstant.kPrimaryLightColor),
       ),
     );
   }

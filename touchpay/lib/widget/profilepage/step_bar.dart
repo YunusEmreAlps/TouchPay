@@ -21,12 +21,12 @@ class StepBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
     return CircularStepProgressIndicator(
-      totalSteps: 5000,
-      currentStep: stepNumber,
+      totalSteps: 2500,
+      currentStep: (stepNumber / 4).toInt(),
       stepSize: 10,
       selectedColor: AppConstant.kPrimaryColor,
       unselectedColor: Colors.grey[200],
-      padding: math.pi / 5000,
+      padding: math.pi / 2500,
       width: 280,
       height: 280,
       child: Container(
@@ -49,17 +49,18 @@ class StepBar extends StatelessWidget {
             ),
             SizedBox(height: defaultSize * 4), // 40
             Text(
-              (stepNumber).toString(),
+              (stepNumber).toString() + " TP",
               style: TextStyle(
                 fontFamily: 'NexaLight',
-                fontSize: defaultSize * 4, // 28
+                fontSize: defaultSize * 3.8, // 28
                 color: AppConstant.kTextColor,
               ),
             ),
             SizedBox(height: defaultSize * 4), // 40
             Text(
-              "GOAL 10.000",
+              "Total Balance\nAvailable",
               style: TextStyle(fontFamily: 'Muli', height: 1.5),
+              textAlign: TextAlign.center,
             ),
           ],
         ),

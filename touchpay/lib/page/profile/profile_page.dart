@@ -9,10 +9,15 @@ import 'package:touchpay/util/size_config.dart';
 import 'package:touchpay/widget/profilepage/status_bar.dart';
 import 'package:touchpay/widget/profilepage/step_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:touchpay/sharedpreferences/sharedpreferences.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
+
+  int step = 0;
+  int toplamOdenen = 0;
 }
 
 class _ProfilePageState extends State<ProfilePage> {
@@ -21,7 +26,6 @@ class _ProfilePageState extends State<ProfilePage> {
   bool isEmpty = false;
 
   int _selectedCategory = 0;
-  int step = 0;
 
   String _steps = '?';
 
@@ -32,6 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    odenen_al();
     var _widthFull = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -72,6 +77,9 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  HeaderInfo(
+                    isMain: true,
+                  ),
                   SizedBox(height: SizeConfig.defaultSize * 2), // 20
                   // Step Bar
                   Center(
@@ -79,7 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         StepBar(
-                          stepNumber: step,
+                          stepNumber: widget.step - widget.toplamOdenen,
                         ),
                       ],
                     ),
@@ -93,8 +101,17 @@ class _ProfilePageState extends State<ProfilePage> {
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         StatCard(
+                          title: 'Total Step',
+                          achieved: widget.step.toDouble(),
+                          total: 10000,
+                          identity: 'STEP',
+                          color: AppConstant.kPrimaryColor,
+                          image: Image.asset('assets/images/walking.png',
+                              width: 40),
+                        ),
+                        StatCard(
                           title: 'Calories',
-                          achieved: step * 0.05,
+                          achieved: widget.step * 0.05,
                           total: 2500, // per day
                           identity: 'KCAL',
                           color: AppConstant.kPrimaryColor,
@@ -103,31 +120,16 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         StatCard(
                           title: 'Distance',
-                          achieved: 350,
+                          achieved: (widget.step * 0.0008),
                           total: 1000,
                           identity: 'KM',
                           color: AppConstant.kPrimaryColor,
-                          image:
-                              Image.asset('assets/images/fire.png', width: 40),
-                        ),
-                        StatCard(
-                          title: 'Minute',
-                          achieved: 100,
-                          total: 1000,
-                          identity: 'Minute',
-                          color: AppConstant.kPrimaryColor,
-                          image:
-                              Image.asset('assets/images/water.png', width: 40),
+                          image: Image.asset('assets/images/distance.png',
+                              width: 40),
                         ),
                       ],
                     ),
                   ),
-
-                  /*StepCounter(),
-                  HeaderInfo(
-                    isMain: true,
-                  ),
-                  */
                 ],
               ),
             ),
@@ -201,10 +203,16 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+  void odenen_al() async {
+    widget.toplamOdenen = await Pref().loadInt("odenen");
+    print(widget.toplamOdenen.toString());
+  }
+
   void onStepCount(StepCount event) {
     setState(() {
       print("yürüme:" + event.toString());
-      step = event.steps;
+      widget.step = event.steps;
+      Pref().saveInt("adim", event.steps);
     });
   }
 

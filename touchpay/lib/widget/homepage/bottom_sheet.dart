@@ -5,7 +5,8 @@ import 'package:touchpay/util/app_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AppBottomSheetWidgets {
-  static Widget selectCategory(Widget widget, Widget widget2) => SingleChildScrollView(
+  static Widget selectCategory(Widget widget, Widget widget2) =>
+      SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -14,30 +15,35 @@ class AppBottomSheetWidgets {
         ),
       );
 
-  static Widget buildHakkindaItem(Widget widget) => Column(
-        children: <Widget>[
-          AppWidget.pullDown(AppConstant.colorPullDown2),
-          widget,
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0),
-            // child: Center(child: SvgPicture.asset(AppConstant.svgLogo, height: 64)),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40, 32, 40, 0),
-            child: Center(
-              child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: AppConstant.colorAppDescription),
-                  children: <TextSpan>[
-                    TextSpan(text: AppConstant.appLongRichDescription, style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: AppConstant.appLongDescription),
-                  ],
+  static Widget buildHakkindaItem(Widget widget) => SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            AppWidget.pullDown(AppConstant.colorPullDown2),
+            widget,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 32, 40, 0),
+              child: Center(
+                child: RichText(
+                  textAlign: TextAlign.start,
+                  text: TextSpan(
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: AppConstant.colorAppDescription),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: AppConstant.appLongRichDescription,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextSpan(text: AppConstant.appLongDescription),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
 
   static Widget buildKatkiItem(Widget widget) => Column(
@@ -54,7 +60,9 @@ class AppBottomSheetWidgets {
                 SvgPicture.asset(AppConstant.svgMessage, height: 40),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 30, 32, 24),
-                  child: Center(child: Text(AppConstant.katkiOneriDetails, style: _bottomSheetTextStyleF14W500)),
+                  child: Center(
+                      child: Text(AppConstant.katkiOneriDetails,
+                          style: _bottomSheetTextStyleF14W500)),
                 ),
                 AppBottomSheetWidgets.btnEpostaYaz,
               ],
@@ -70,11 +78,22 @@ class AppBottomSheetWidgets {
           children: <Widget>[
             AppWidget.pullDown(AppConstant.colorPullDown2),
             widget,
-            Padding(padding: const EdgeInsets.only(top: 32.0), child: AppBottomSheetWidgets.sectionItem(AppConstant.appDescription, AppConstant.address)),
-            Padding(padding: const EdgeInsets.only(left: 32), child: AppBottomSheetWidgets.phoneRow(Icons.print)),
-            Padding(padding: const EdgeInsets.only(left: 32), child: AppBottomSheetWidgets.btnEpostaYaz),
-            Padding(padding: const EdgeInsets.fromLTRB(16, 24, 16, 22), child: Divider(color: AppConstant.colorBottomSheetDivider, thickness: 1)),
-            AppBottomSheetWidgets.sectionItem(AppConstant.magaza, AppConstant.magazaAddress),
+            Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: AppBottomSheetWidgets.sectionItem(
+                    AppConstant.appDescription, AppConstant.address)),
+            Padding(
+                padding: const EdgeInsets.only(left: 32),
+                child: AppBottomSheetWidgets.phoneRow(Icons.print)),
+            Padding(
+                padding: const EdgeInsets.only(left: 32),
+                child: AppBottomSheetWidgets.btnEpostaYaz),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(16, 24, 16, 22),
+                child: Divider(
+                    color: AppConstant.colorBottomSheetDivider, thickness: 1)),
+            AppBottomSheetWidgets.sectionItem(
+                AppConstant.magaza, AppConstant.magazaAddress),
             Padding(
               padding: const EdgeInsets.fromLTRB(32, 24, 0, 0),
               child: MaterialButton(
@@ -82,8 +101,13 @@ class AppBottomSheetWidgets {
                 height: 48,
                 elevation: 0,
                 color: AppConstant.colorDrawerButton,
-                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8)),
-                child: Text(AppConstant.eMagaza, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: AppConstant.colorHeading)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(8)),
+                child: Text(AppConstant.eMagaza,
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: AppConstant.colorHeading)),
                 onPressed: _launchURL,
               ),
             ),
@@ -97,8 +121,14 @@ class AppBottomSheetWidgets {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(header, style: TextStyle(color: AppConstant.colorBottomSheetItemHeader, fontSize: 18, fontWeight: FontWeight.bold)),
-            Padding(padding: const EdgeInsets.only(top: 20.0, bottom: 10), child: Text(address, style: _bottomSheetTextStyleF14W500)),
+            Text(header,
+                style: TextStyle(
+                    color: AppConstant.colorBottomSheetItemHeader,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold)),
+            Padding(
+                padding: const EdgeInsets.only(top: 20.0, bottom: 10),
+                child: Text(address, style: _bottomSheetTextStyleF14W500)),
             phoneRow(Icons.phone),
           ],
         ),
@@ -109,15 +139,21 @@ class AppBottomSheetWidgets {
         height: 48,
         elevation: 0,
         color: AppConstant.colorDrawerButton,
-        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8)),
-        child: Text(AppConstant.epostayaz, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: AppConstant.colorHeading)),
+        shape:
+            RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8)),
+        child: Text(AppConstant.epostayaz,
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: AppConstant.colorHeading)),
         onPressed: _sendMail,
       );
 
   static Widget phoneRow(IconData icon) => Row(
         children: <Widget>[
           Icon(icon, size: 15, color: AppConstant.colorPrimary),
-          FlatButton(onPressed: _callPhone, child: Text(AppConstant.phoneNumber)),
+          FlatButton(
+              onPressed: _callPhone, child: Text(AppConstant.phoneNumber)),
         ],
       );
 
@@ -150,8 +186,13 @@ class AppBottomSheetWidgets {
 
   static BoxDecoration get bottomSheetBoxDecoration => BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(topLeft: const Radius.circular(15.0), topRight: const Radius.circular(15.0)),
+        borderRadius: BorderRadius.only(
+            topLeft: const Radius.circular(15.0),
+            topRight: const Radius.circular(15.0)),
       );
 
-  static TextStyle get _bottomSheetTextStyleF14W500 => TextStyle(color: AppConstant.colorParagraph2, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle get _bottomSheetTextStyleF14W500 => TextStyle(
+      color: AppConstant.colorParagraph2,
+      fontSize: 14,
+      fontWeight: FontWeight.w500);
 }
