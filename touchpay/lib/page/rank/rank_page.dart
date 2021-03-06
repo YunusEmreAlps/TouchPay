@@ -48,7 +48,6 @@ class _RankPageState extends State<RankPage> {
       ),
       body: Column(
         children: <Widget>[
-          //
           SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             scrollDirection: Axis.horizontal,
@@ -127,18 +126,7 @@ class _RankPageState extends State<RankPage> {
     return Column(
       children: <Widget>[
         // ignore: missing_required_param
-        _historyItem(title: 'Yunus Emre Alpu'),
-        _historyItem(title: 'Berkay Öztürk'),
-        _historyItem(title: 'Barış Özcan'),
-        _historyItem(title: 'Ayhan Tarakçı'),
-      ],
-    );
-  }
-
-  Widget _week() {
-    return Column(
-      children: <Widget>[
-        _historyItem(title: 'Yunus Emre Alpu', userStepNumber: 100000),
+        _historyItem(title: 'Yunus Emre Alpu', userStepNumber: 10000),
         _historyItem(title: 'Berkay Öztürk', userStepNumber: 8500),
         _historyItem(title: 'Barış Özcan', userStepNumber: 7500),
         _historyItem(title: 'Ayhan Tarakçı', userStepNumber: 6500),
@@ -146,9 +134,25 @@ class _RankPageState extends State<RankPage> {
     );
   }
 
+  Widget _week() {
+    return Column(
+      children: <Widget>[
+        _historyItem(title: 'Yunus Emre Alpu', userStepNumber: 70000),
+        _historyItem(title: 'Berkay Öztürk', userStepNumber: 65000),
+        _historyItem(title: 'Barış Özcan', userStepNumber: 55000),
+        _historyItem(title: 'Ayhan Tarakçı', userStepNumber: 45000),
+      ],
+    );
+  }
+
   Widget _month() {
     return Column(
-      children: <Widget>[],
+      children: <Widget>[
+        _historyItem(title: 'Yunus Emre Alpu', userStepNumber: 70000),
+        _historyItem(title: 'Berkay Öztürk', userStepNumber: 65000),
+        _historyItem(title: 'Barış Özcan', userStepNumber: 55000),
+        _historyItem(title: 'Ayhan Tarakçı', userStepNumber: 45000),
+      ],
     );
   }
 
@@ -343,5 +347,5 @@ class _RankPageState extends State<RankPage> {
         ),
       ),
     );
-  }  
+  }
 }

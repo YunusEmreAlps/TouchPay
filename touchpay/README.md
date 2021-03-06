@@ -16,6 +16,22 @@
   <b>Take an Action For Other People</b>
 </p>
 
+| UI  | UI |
+| ------------- |:-------------:|
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/1.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/2.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/3.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/4.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/5.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/6.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/7.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/8.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/9.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/10.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/11.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/12.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/13.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/14.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/15.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/16.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/17.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/18.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/19.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/20.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/21.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/22.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/23.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/24.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/25.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/26.jpg) |
+
 ## Table of Contents
 <ul>
   <li><a href="#-getting-started">Getting Started</a></li>
