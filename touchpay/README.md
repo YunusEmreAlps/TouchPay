@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/YunusEmreAlps/TouchPay/tree/master/touchpay">
-    <img alt="TouchPay" src="assets/images/touchpay2.png" width="350px" />
+    <img alt="TouchPay" src="assets/images/touchpay1.png" width="350px" />
   </a>
 </h1>
 
