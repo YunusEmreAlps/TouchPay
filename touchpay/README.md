@@ -28,9 +28,9 @@
 | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/15.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/16.jpeg) |
 | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/17.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/18.jpeg) |
 | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/19.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/20.jpeg) |
-| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/21.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/22.jpg) |
-| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/23.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/24.jpg) |
-| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/25.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/26.jpg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/21.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/22.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/23.jpg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/24.jpeg) |
+| ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/25.jpeg) | ![alt text](https://github.com/YunusEmreAlps/TouchPay/blob/master/touchpay/ss/26.jpeg) |
 
 ## Table of Contents
 <ul>
