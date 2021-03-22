@@ -1,4 +1,4 @@
-// Wordy
+// LinkUpp
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:touchpay/sharedpreferences/sharedpreferences.dart';

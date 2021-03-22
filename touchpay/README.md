@@ -115,7 +115,7 @@ flutter run
 
 ### Step 2
 
-- 👯 Clone this repo to your local machine using `https://github.com/luacasmontano/openweathermap-flutter.git`
+- 👯 Clone this repo to your local machine using `https://github.com/YunusEmreAlps/TouchPay/tree/master/touchpay`
 
 ### Step 3
 

@@ -77,9 +77,6 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  HeaderInfo(
-                    isMain: true,
-                  ),
                   SizedBox(height: SizeConfig.defaultSize * 2), // 20
                   // Step Bar
                   Center(
