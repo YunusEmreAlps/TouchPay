@@ -142,7 +142,6 @@ After your Pull Request is merged, can you delete your feature branch.
 Reach out to me at one of the following places!
 
 - Linkedin at [Yunus Emre Alpu](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
-- Linkedin at [Berkay Öztürk](https://www.linkedin.com/in/berkay-öztürk-0694a4208/)
 
 ---
 
